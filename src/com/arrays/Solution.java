@@ -1,9 +1,6 @@
 package com.arrays;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Solution {
@@ -14,8 +11,24 @@ public class Solution {
         int target = 6;
         System.out.println(twoSum(nums,target));*/
 
-        int[] nums = {0,3,7,2,5,8,4,6,0,1};
-        System.out.println(longestConsecutive(nums));
+       /* int[] nums = {0,3,7,2,5,8,4,6,0,1,-5};
+        List<Integer> list  = new ArrayList<>();
+        TreeSet<Integer> tl = new TreeSet<>();
+        for(int i : nums) {
+            list.add(i);
+            tl.add(i);
+        }
+        int max1 = Arrays.stream(nums).max().orElseThrow();
+        int max = list.stream().max((a, b) -> b-a).get();
+        System.out.println(tl.pollLast());
+        System.out.println(tl.pollLast()); */
+        String[] pepes = new String[]{"mierda", "carajo"};
+        List<String> list = Arrays.stream(pepes).collect(Collectors.toList());
+        list.add("7");
+
+        for(String i : pepes) System.out.println(i);
+        System.out.println("-------");
+        for(String i : list) System.out.println(i);
 
 
     }

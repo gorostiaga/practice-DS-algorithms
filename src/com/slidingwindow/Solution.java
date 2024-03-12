@@ -66,4 +66,24 @@ public class Solution {
         return false;
 
     }
+
+    public int characterReplacement(String s, int k) {
+
+        int maxOcu = 0, result=0;
+        int l=0, r=0;
+        char[] chars = s.toCharArray();
+        int[] temp = new int[26];
+        while(r<chars.length){
+            temp[chars[r]-'A']++;
+            maxOcu = Math.max(maxOcu, temp[chars[r]-'A']);
+            result = Math.max(result, r-l+1) ;
+            if(r-l+1-maxOcu<=k) r++;
+            else {
+                temp[chars[l]-'A']--;
+                l++;
+            }
+        }
+        return result;
+
+    }
 }

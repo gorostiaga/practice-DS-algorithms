@@ -1,8 +1,29 @@
 package com.stack;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Solution {
+
+    int length;
+    List<String> ans;
+    public List<String> generateParenthesis(int n) {
+        length = n;
+        ans = new ArrayList<>();
+        recursive(0,0,"");
+        return ans;
+    }
+
+    private void recursive(int opener, int closer, String s){
+        if(s.length() == length*2){
+            ans.add(s);
+            return;
+        }
+        if(opener<length) recursive(opener++, closer, s+"(");
+        if(closer<opener) recursive(opener, closer++, s+")");
+
+    }
 
     public int evalRPN(String[] tokens) {
         Stack <Integer> st = new Stack();
