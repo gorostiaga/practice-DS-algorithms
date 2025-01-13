@@ -19,6 +19,12 @@ public class ListToArray {
         //List to array
         int[] arrayA = listA.stream().mapToInt(Integer::intValue).toArray();
         System.out.println("arrayA");
+        System.out.println("arrayb");
+        System.out.println("arrayc");
+        System.out.println("arrayh");
+        System.out.println("arrayd");
+        System.out.println("arrayg");
+        System.out.println("arrayr");
         for(var i : arrayA) System.out.println(i);
 
         //array to list
